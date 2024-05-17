@@ -1,7 +1,7 @@
 import requests
 
 # Fetch the content of the URL
-url = "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/configtg.txt"
+url = "https://raw.githubusercontent.com/qjlxg/hy2/main/configtg.txt"
 
 try:
     response = requests.get(url)
