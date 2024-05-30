@@ -295,16 +295,9 @@ with open('telegramchannels.json', 'w', encoding="utf-8") as telegram_channels_f
 with open('invalidtelegramchannels.json', 'w', encoding="utf-8") as inv_telegram_channels_file:
     json.dump(inv_tg_name_json, inv_telegram_channels_file, indent = 4)
 
-i = 0
-with open("config.txt", "w", encoding="utf-8") as file:
-    for code in new_processed_codes:
-        if i == 0:
-            config_string = "#🌐 به روزرسانی شده در" + final_string + " | هر 1 ساعت کانفیگ جدید داریم"
-        else:
-            config_string = "#🌐سرور " + str(i) + " | " + str(final_others_string) + "| MTSRVRS"
-        config_final = code + config_string
-        file.write(config_final + "\n")
-        i += 1
+with open("configtg.txt", "w", encoding="utf-8") as file:
+    for code in processed_codes:
+        file.write(code.encode("utf-8").decode("utf-8") + "\n")
 
 print(f'\nTime spent - {str(datetime.now() - start_time).split(".")[0]}')
 #print(f'\nTime spent - {timedelta(seconds=int((datetime.now() - start_time).total_seconds()))}')
